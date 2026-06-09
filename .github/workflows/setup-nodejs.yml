@@ -1,0 +1,16 @@
+name: Setup NodeJS
+
+on:
+    workflow_dispatch:
+
+jobs:
+    nodejs-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Setup NodeJS
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '22'
+
+            - name: Check NodeJS version
+              run: npm --version
