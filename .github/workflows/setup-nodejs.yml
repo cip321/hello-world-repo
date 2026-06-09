@@ -11,6 +11,9 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: '22'
-
-            - name: Check NodeJS version
-              run: npm --version
+    version-check:
+        runs-on: ubuntu-latest
+        needs: nodejs-job
+        steps:
+        - name: Check NodeJS version
+          run: npm --version
